@@ -11,4 +11,5 @@ fn main() {  // it can receive modifiers like `async` or return a Result
     // you can easely print data structures that implement Debug
     // println!("This is a tuple: {}", (42, 84));  // this fails
     println!("This is a tuple: {:?}", (42, 84));   // this works
+    // check here for more: https://doc.rust-lang.org/rust-by-example/hello/print.html
 }
