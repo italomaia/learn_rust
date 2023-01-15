@@ -14,13 +14,10 @@ async fn main() -> std::io::Result<()> {
                 let mut resp =
                         // redirect and preserve the http method used; also, no caching please
                         HttpResponse::TemporaryRedirect();
-                    resp.insert_header(("Location", "/root_path/"));
+                    resp.insert_header(("Location", "/index"));
                     resp
             }))
-            .service(
-                web::scope("/root_path")
-                    .route("/", web::get().to(index_view))
-            )
+            .route("/index", web::get().to(index_view))
     })
     .bind(("127.0.0.1", 8080))?
     .run()
